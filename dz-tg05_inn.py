@@ -6,7 +6,7 @@ from aiogram.filters import Command, CommandStart
 import aiohttp
 import logging
 import json
-from config import TOKEN, INN_API_KEY
+from config import TOKEN, DADATA_API_KEY
 
 # Установка логирования
 logging.basicConfig(level=logging.INFO)
@@ -25,7 +25,7 @@ async def get_company_name_by_inn(inn: str):
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": f"Token {INN_API_KEY}"
+        "Authorization": f"Token {DADATA_API_KEY}"
     }
     data = {
         "query": inn,
